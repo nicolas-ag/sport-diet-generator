@@ -7,37 +7,136 @@
     <div class="container text-center">
       <br />
       <p>
-        This tool enables you to get a full diet plan accoring to your Sport
+        This tool enables you to get a full diet plan according to your Sport
         goals.
       </p>
     </div>
     <br />
     <br />
 
-    <h2>Personnal Data</h2>
+    <h2>Personal Data</h2>
 
     <div class="container text-center">
       <div class="row">
-        <div class="col">Column</div>
-        <div class="col">Column</div>
-        <div class="col">Column</div>
+        <div class="col">
+          <label>Sexe</label>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="flexRadioDefault"
+              id="flexRadioDefault1"
+              checked
+            />
+            <label class="form-check-label" for="flexRadioDefault1">
+              Male
+            </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="flexRadioDefault"
+              id="flexRadioDefault2"
+            />
+            <label class="form-check-label" for="flexRadioDefault2">
+              Female
+            </label>
+          </div>
+        </div>
+        <div class="col">
+          <label>Age</label>
+          <input type="text" class="form-control" />
+        </div>
+        <div class="col">
+          <label>Weight (kg)</label>
+          <input type="text" class="form-control" />
+        </div>
+        <div class="col">
+          <label>Height (cm)</label>
+          <input type="text" class="form-control" />
+        </div>
       </div>
     </div>
     <br />
 
     <h2>Goals</h2>
 
-    <p>Here is content to ask</p>
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">
+          <label>Your objective is </label>
+          <select class="form-select" aria-label="Default select example">
+            <option selected>Choose</option>
+            <option value="1">Gain muscle mass</option>
+            <option value="2">Loose body fat</option>
+            <option value="3">Do a muscle cut</option>
+          </select>
+        </div>
+        <div class="col">
+          <label>Activity Level</label>
+          <ul class="list-group list-group-horizontal">
+            <button
+            type="button"
+            class="list-group-item list-group-item-action"
+          >
+            None
+            <fa-icon class="fa-2x" [icon]="faPerson"></fa-icon>
+          </button>
+            <button
+              type="button"
+              class="list-group-item list-group-item-action"
+            >
+              Little
+              <fa-icon class="fa-2x" [icon]="faPersonWalking"></fa-icon>
+            </button>
+            <button
+              type="button"
+              class="list-group-item list-group-item-action"
+            >
+              Medium
+              <fa-icon class="fa-2x" [icon]="faPersonRunning"></fa-icon>
+            </button>
+            <button
+              type="button"
+              class="list-group-item list-group-item-action"
+            >
+              Hard
+              <fa-icon class="fa-2x" [icon]="faPersonSwimming"></fa-icon>
+            </button>
+            <button
+              type="button"
+              class="list-group-item list-group-item-action"
+            >
+              Expert
+              <fa-icon class="fa-2x" [icon]="faPerson"></fa-icon>
+            </button>
+          </ul>
+        </div>
+      </div>
+    </div>
     <br />
 
     <h2>Preferences</h2>
 
-    <p>Here is content to ask</p>
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">
+          <label>Unwanted ingredient(s) in your diet ? </label>
+          <select class="form-select" aria-label="Default select example">
+            <option selected>Choose</option>
+            <option value="1">Brocolis</option>
+            <option value="2">Mushrooms</option>
+            <option value="3">Salad</option>
+          </select>
+        </div>
+      </div>
+    </div>
     <br />
 
     <h2>Diet Plan</h2>
 
-    <p>Here is content to ask</p>
+    <button type="button" class="btn btn-primary btn-lg">Generate Diet Plan and Data</button>
     <br />
   </body>
 </html>
