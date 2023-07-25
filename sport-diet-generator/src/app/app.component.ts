@@ -18,7 +18,9 @@ export class AppComponent implements OnInit {
   weightInput: number = 0;
   levelInput: number = 0;
   nbCaloriesBasal: number = 0;
-  nbCaloriesGoals: number = 0;
+  nbCaloriesBasalWithEfforts: number = 0;
+  goal : string = '';
+  nbCaloriesGoals : number = 0;
 
   title = 'sport-diet-generator';
   faPerson = faPerson;
@@ -26,7 +28,7 @@ export class AppComponent implements OnInit {
   faPersonRunning = faPersonRunning;
   faPersonSwimming = faPersonSwimming;
 
-  ratiosGaosls: any = {
+  ratiosGoals: any = {
     None: {
       value: 1.2,
     },
@@ -65,11 +67,24 @@ export class AppComponent implements OnInit {
   }
 
   changeLevel(test: string): void {
-    this.levelInput = this.ratiosGaosls[test].value;
-    this.estimatedCaloriesWithGoals();
+    this.levelInput = this.ratiosGoals[test].value;
+    this.estimatedCaloriesWithEfforts();
+    this.estimatedCaloriesGoals()
   }
 
-  estimatedCaloriesWithGoals(): void {
-    this.nbCaloriesGoals = Math.trunc(this.nbCaloriesBasal * this.levelInput);
+  estimatedCaloriesWithEfforts(): void {
+    this.nbCaloriesBasalWithEfforts = Math.trunc(this.nbCaloriesBasal * this.levelInput);
+  }
+
+  estimatedCaloriesGoals(): void {
+    if(this.goal == '1'){
+      this.nbCaloriesGoals = Math.trunc(this.nbCaloriesBasalWithEfforts *1.2);
+    }
+    else if(this.goal == '2'){
+      this.nbCaloriesGoals = Math.trunc(this.nbCaloriesBasalWithEfforts *0.8);
+    }
+    else if(this.goal == '3'){
+      this.nbCaloriesGoals = Math.trunc(this.nbCaloriesBasalWithEfforts *0.8);
+    }
   }
 }

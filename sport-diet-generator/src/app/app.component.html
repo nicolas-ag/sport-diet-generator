@@ -72,7 +72,6 @@
         </div>
       </div>
     </div>
-    Metabolisme Basal = {{ nbCaloriesBasal }} calories
     <br />
     <br />
 
@@ -83,8 +82,8 @@
         <div class="col">
           <label>Your objective is : </label>
         </div>
-        <div class="col">
-          <select class="form-select" aria-label="Default select example">
+        <div class="col-2">
+          <select (change)="estimatedCaloriesGoals" [(ngModel)]="goal" class="form-select" aria-label="Default select example">
             <option selected>Choose</option>
             <option value="1">Gain muscle mass</option>
             <option value="2">Loose body fat</option>
@@ -140,7 +139,6 @@
         </div>
       </div>
     </div>
-    Total Daily Energy Expenditure based on BMR = {{ nbCaloriesGoals }} calories
     <br />
     <br />
     <h2>Preferences</h2>
@@ -200,7 +198,9 @@
     <br />
 
     <h2>Diet Plan</h2>
-
+    Metabolisme Basal = {{ nbCaloriesBasal }} calories<br />
+    Total Daily Energy Expenditure based on BMR = {{ nbCaloriesBasalWithEfforts }} calories<br />
+    Total Daily Energy Expenditure to attempt Goals = {{ nbCaloriesGoals }} calories<br /><br />
     <button type="button" class="btn btn-primary btn-lg" disabled>
       Generate Diet Plan and Data
     </button>
