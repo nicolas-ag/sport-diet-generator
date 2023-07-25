@@ -15,8 +15,6 @@
     <br />
 
     <h2>Personal Data</h2>
-    Metabolisme Basal = {{nbCalories}} calories
-
     <div class="container text-center">
       <div class="row">
         <div class="col">
@@ -62,6 +60,7 @@
         </div>
       </div>
     </div>
+    Metabolisme Basal = {{nbCaloriesBasal}} calories
     <br />
 
     <h2>Goals</h2>
@@ -82,6 +81,7 @@
           <ul class="list-group list-group-horizontal">
             <button
             type="button"
+            (click)="changeLevel('None')"
             class="list-group-item list-group-item-action"
           >
             None
@@ -89,6 +89,7 @@
           </button>
             <button
               type="button"
+              (click)="changeLevel('Little')"
               class="list-group-item list-group-item-action"
             >
               Little
@@ -96,6 +97,7 @@
             </button>
             <button
               type="button"
+              (click)="changeLevel('Medium')"
               class="list-group-item list-group-item-action"
             >
               Medium
@@ -103,6 +105,7 @@
             </button>
             <button
               type="button"
+              (click)="changeLevel('Hard')"
               class="list-group-item list-group-item-action"
             >
               Hard
@@ -110,6 +113,7 @@
             </button>
             <button
               type="button"
+              (click)="changeLevel('Expert')"
               class="list-group-item list-group-item-action"
             >
               Expert
@@ -119,6 +123,7 @@
         </div>
       </div>
     </div>
+    Total Daily Energy Expenditure based on BMR = {{nbCaloriesGoals}} calories
     <br />
 
     <h2>Preferences</h2>
@@ -180,4 +185,13 @@
     <button type="button" class="btn btn-primary btn-lg">Generate Diet Plan and Data</button>
     <br />
   </body>
+  <div class="btn-group" role="group" aria-label="Basic outlined example">
+    <button  type="button" class="btn btn-outline-primary">
+      hello
+    </button>
+    <button  type="button" class="btn btn-outline-primary">
+      hello
+    </button>
+  </div>
+
 </html>
