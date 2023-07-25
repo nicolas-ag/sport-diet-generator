@@ -15,6 +15,7 @@
     <br />
 
     <h2>Personal Data</h2>
+    Metabolisme Basal = {{nbCalories}} calories
 
     <div class="container text-center">
       <div class="row">
@@ -24,11 +25,12 @@
             <input
               class="form-check-input"
               type="radio"
-              name="flexRadioDefault"
-              id="flexRadioDefault1"
-              checked
+              [value]='1'
+              [(ngModel)]="sexeInput"
+              name="radioSexe"
+              id="radioSexeM"
             />
-            <label class="form-check-label" for="flexRadioDefault1">
+            <label class="form-check-label" for="radioSexeM">
               Male
             </label>
           </div>
@@ -36,25 +38,27 @@
             <input
               class="form-check-input"
               type="radio"
-              name="flexRadioDefault"
-              id="flexRadioDefault2"
+              [value]='2'
+              [(ngModel)]="sexeInput"
+              name="radioSexe"
+              id="radioSexeF"
             />
-            <label class="form-check-label" for="flexRadioDefault2">
+            <label class="form-check-label" for="radioSexeF">
               Female
             </label>
           </div>
         </div>
         <div class="col">
           <label>Age</label>
-          <input type="text" class="form-control" />
+          <input type="text" [(ngModel)]="ageInput" class="form-control" />
         </div>
         <div class="col">
           <label>Weight (kg)</label>
-          <input type="text" class="form-control" />
+          <input type="text" [(ngModel)]="weightInput" class="form-control" />
         </div>
         <div class="col">
-          <label>Height (cm)</label>
-          <input type="text" class="form-control" />
+          <label>Height (m)</label>
+          <input type="text" [(ngModel)]="heightInput" class="form-control" (ngModelChange)="estimatedCaloriesDaily()" />
         </div>
       </div>
     </div>
@@ -136,11 +140,11 @@
             <input
               class="form-check-input"
               type="radio"
-              name="flexRadioDefault"
-              id="flexRadioDefault1"
+              name="radioSexe"
+              id="radioSexeM"
               checked
             />
-            <label class="form-check-label" for="flexRadioDefault1">
+            <label class="form-check-label" for="radioSexeM">
               3
             </label>
           </div>
@@ -148,10 +152,10 @@
             <input
               class="form-check-input"
               type="radio"
-              name="flexRadioDefault"
-              id="flexRadioDefault2"
+              name="radioSexe"
+              id="radioSexeF"
             />
-            <label class="form-check-label" for="flexRadioDefault2">
+            <label class="form-check-label" for="radioSexeF">
               4
             </label>
           </div>
@@ -159,10 +163,10 @@
             <input
               class="form-check-input"
               type="radio"
-              name="flexRadioDefault"
-              id="flexRadioDefault2"
+              name="radioSexe"
+              id="radioSexeF"
             />
-            <label class="form-check-label" for="flexRadioDefault2">
+            <label class="form-check-label" for="radioSexeF">
               5
             </label>
           </div>
