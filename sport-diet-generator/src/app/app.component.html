@@ -1,5 +1,6 @@
 <html>
   <body>
+    <br />
     <div class="container text-center">
       <h1>Sport Diet Generator</h1>
     </div>
@@ -18,49 +19,61 @@
     <div class="container text-center">
       <div class="row">
         <div class="col">
-          <label>Sexe</label>
+          <label>Sexe : </label>
+        </div>
+        <div class="col">
           <div class="form-check">
             <input
               class="form-check-input"
               type="radio"
-              [value]='1'
+              [value]="1"
               [(ngModel)]="sexeInput"
               name="radioSexe"
               id="radioSexeM"
             />
-            <label class="form-check-label" for="radioSexeM">
-              Male
-            </label>
+            <label class="form-check-label" for="radioSexeM"> Male </label>
           </div>
+        </div>
+        <div class="col">
           <div class="form-check">
             <input
               class="form-check-input"
               type="radio"
-              [value]='2'
+              [value]="2"
               [(ngModel)]="sexeInput"
               name="radioSexe"
               id="radioSexeF"
             />
-            <label class="form-check-label" for="radioSexeF">
-              Female
-            </label>
+            <label class="form-check-label" for="radioSexeF"> Female </label>
           </div>
         </div>
         <div class="col">
-          <label>Age</label>
+          <label>Age : </label>
+        </div>
+        <div class="col">
           <input type="text" [(ngModel)]="ageInput" class="form-control" />
         </div>
         <div class="col">
-          <label>Weight (kg)</label>
+          <label>Weight (kg) : </label>
+        </div>
+        <div class="col">
           <input type="text" [(ngModel)]="weightInput" class="form-control" />
         </div>
         <div class="col">
-          <label>Height (m)</label>
-          <input type="text" [(ngModel)]="heightInput" class="form-control" (ngModelChange)="estimatedCaloriesDaily()" />
+          <label>Height (m) : </label>
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            [(ngModel)]="heightInput"
+            class="form-control"
+            (ngModelChange)="estimatedCaloriesDaily()"
+          />
         </div>
       </div>
     </div>
-    Metabolisme Basal = {{nbCaloriesBasal}} calories
+    Metabolisme Basal = {{ nbCaloriesBasal }} calories
+    <br />
     <br />
 
     <h2>Goals</h2>
@@ -68,7 +81,9 @@
     <div class="container text-center">
       <div class="row">
         <div class="col">
-          <label>Your objective is </label>
+          <label>Your objective is : </label>
+        </div>
+        <div class="col">
           <select class="form-select" aria-label="Default select example">
             <option selected>Choose</option>
             <option value="1">Gain muscle mass</option>
@@ -77,16 +92,18 @@
           </select>
         </div>
         <div class="col">
-          <label>Activity Level</label>
+          <label>Activity Level : </label>
+        </div>
+        <div class="col-7">
           <ul class="list-group list-group-horizontal">
             <button
-            type="button"
-            (click)="changeLevel('None')"
-            class="list-group-item list-group-item-action"
-          >
-            None
-            <fa-icon class="fa-2x" [icon]="faPerson"></fa-icon>
-          </button>
+              type="button"
+              (click)="changeLevel('None')"
+              class="list-group-item list-group-item-action"
+            >
+              None
+              <fa-icon class="fa-2x" [icon]="faPerson"></fa-icon>
+            </button>
             <button
               type="button"
               (click)="changeLevel('Little')"
@@ -123,15 +140,17 @@
         </div>
       </div>
     </div>
-    Total Daily Energy Expenditure based on BMR = {{nbCaloriesGoals}} calories
+    Total Daily Energy Expenditure based on BMR = {{ nbCaloriesGoals }} calories
     <br />
-
+    <br />
     <h2>Preferences</h2>
 
     <div class="container text-center">
       <div class="row">
-        <div class="col">
+        <div class="col-4">
           <label>Unwanted ingredient(s) in your diet ? </label>
+        </div>
+        <div class="col">
           <select class="form-select" aria-label="Default select example">
             <option selected>Choose</option>
             <option value="1">Brocolis</option>
@@ -141,6 +160,8 @@
         </div>
         <div class="col">
           <label>How many meals per day ?</label>
+        </div>
+        <div class="col">
           <div class="form-check">
             <input
               class="form-check-input"
@@ -149,10 +170,10 @@
               id="radioSexeM"
               checked
             />
-            <label class="form-check-label" for="radioSexeM">
-              3
-            </label>
+            <label class="form-check-label" for="radioSexeM"> 3 </label>
           </div>
+        </div>
+        <div class="col">
           <div class="form-check">
             <input
               class="form-check-input"
@@ -160,10 +181,10 @@
               name="radioSexe"
               id="radioSexeF"
             />
-            <label class="form-check-label" for="radioSexeF">
-              4
-            </label>
+            <label class="form-check-label" for="radioSexeF"> 4 </label>
           </div>
+        </div>
+        <div class="col">
           <div class="form-check">
             <input
               class="form-check-input"
@@ -171,9 +192,7 @@
               name="radioSexe"
               id="radioSexeF"
             />
-            <label class="form-check-label" for="radioSexeF">
-              5
-            </label>
+            <label class="form-check-label" for="radioSexeF"> 5 </label>
           </div>
         </div>
       </div>
@@ -182,16 +201,9 @@
 
     <h2>Diet Plan</h2>
 
-    <button type="button" class="btn btn-primary btn-lg">Generate Diet Plan and Data</button>
+    <button type="button" class="btn btn-primary btn-lg" disabled>
+      Generate Diet Plan and Data
+    </button>
     <br />
   </body>
-  <div class="btn-group" role="group" aria-label="Basic outlined example">
-    <button  type="button" class="btn btn-outline-primary">
-      hello
-    </button>
-    <button  type="button" class="btn btn-outline-primary">
-      hello
-    </button>
-  </div>
-
 </html>
